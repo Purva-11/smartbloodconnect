@@ -9,7 +9,13 @@ export async function apiRequest<T>(path: string, options: RequestInit = {}): Pr
   if (token) headers.set('authorization', `Bearer ${token}`);
 
   const response = await fetch(path, { ...options, headers });
-  const result = await response.json() as T & ApiError;
+  const responseText = await response.text();
+  let result: T & ApiError;
+  try {
+    result = JSON.parse(responseText) as T & ApiError;
+  } catch {
+    throw new Error(response.ok ? 'The server returned an invalid response.' : `Server request failed (${response.status}).`);
+  }
   if (!response.ok) throw new Error(result.error || 'The request could not be completed.');
   return result;
 }

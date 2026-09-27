@@ -4,6 +4,7 @@ import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 import { CampService } from '../../services/camps';
 import type { Camp } from '../../types';
+import { initialCamps } from '../../data/mockData';
 import { ProgressBar } from '../../components/ui/Tabs';
 import { CampRegistrationWizard } from '../../components/forms/CampRegistrationWizard';
 import { CampDetailsModal } from './CampDetailsModal';
@@ -24,7 +25,11 @@ export function CampDiscoveryPage() {
   useEffect(() => {
     void CampService.getAllCamps()
       .then(setCamps)
-      .catch(error => setLoadError(error instanceof Error ? error.message : 'Camps could not be loaded.'));
+      .catch(error => {
+        setCamps(initialCamps);
+        setLoadError('Showing demo camps while the live camp service is unavailable.');
+        console.error('Could not load live camps:', error);
+      });
   }, []);
 
   const filteredCamps = camps.filter(camp => {
