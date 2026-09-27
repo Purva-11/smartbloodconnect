@@ -1,0 +1,20 @@
+export const MapService = {
+  calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
+    const p = 0.017453292519943295;
+    const c = Math.cos;
+    const a = 0.5 - c((lat2 - lat1) * p)/2 + 
+            c(lat1 * p) * c(lat2 * p) * 
+            (1 - c((lon2 - lon1) * p))/2;
+    return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
+  },
+
+  formatDistance(km: number) {
+    if (km < 1) return `${Math.round(km * 1000)} m`;
+    return `${km.toFixed(1)} km`;
+  },
+
+  async geocodeAddress(address: string) {
+    // Mock geocoding
+    return { lat: 19.0760, lng: 72.8777 }; // Mumbai coords as fallback
+  }
+};

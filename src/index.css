@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg: #eaf7ff;
+    --bg-secondary: #f5fbff;
+
+    --glass: rgba(255, 255, 255, 0.65);
+    --glass-strong: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.85);
+
+    --text: #10233f;
+    --text-secondary: #58708d;
+    --muted: #7b91a9;
+
+    --blue: #2563eb;
+    --blue-dark: #1746b2;
+    --sky: #38bdf8;
+    --cyan: #06d9ff;
+
+    --red: #e11d48;
+    --coral: #fb5b63;
+
+    --green: #10b981;
+    --amber: #f59e0b;
+
+    --navy: #081426;
+    --dark-blue: #10213b;
+    --slate: #536780;
+
+    --shadow: 0 20px 60px rgba(40, 95, 150, 0.12);
+    --shadow-hover: 0 28px 75px rgba(37, 99, 235, 0.19);
+
+    --radius-xl: 30px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+    --radius-sm: 11px;
+
+    --transition: 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.dark {
+    --bg: #06101e;
+    --bg-secondary: #091727;
+
+    --glass: rgba(13, 30, 52, 0.72);
+    --glass-strong: rgba(15, 32, 55, 0.90);
+    --glass-border: rgba(91, 117, 148, 0.35);
+
+    --text: #f4f8ff;
+    --text-secondary: #a9b9cb;
+    --muted: #778ba5;
+
+    --blue: #4d8dff;
+    --blue-dark: #2463db;
+
+    --sky: #54b9ff;
+    --cyan: #00eaff;
+
+    --red: #ff304f;
+    --coral: #ff716d;
+
+    --green: #20d99a;
+    --amber: #ffc24b;
+
+    --navy: #020817;
+    --dark-blue: #0a1729;
+    --slate: #647792;
+
+    --shadow: 0 25px 70px rgba(0, 0, 0, 0.40);
+    --shadow-hover: 0 28px 80px rgba(0, 234, 255, 0.12);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Glassmorphism primitives */
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+}
+
+.glass-panel-strong {
+    background: var(--glass-strong);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.glass-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+/* Pulsing animated glowing background Orbs */
+.bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    animation: orbFloat 18s ease-in-out infinite alternate;
+}
+
+.dark .bg-orb {
+    opacity: 0.25;
+}
+
+.bg-orb-1 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.4), rgba(37, 99, 235, 0.1));
+    top: -100px;
+    left: -100px;
+}
+
+.bg-orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(6, 217, 255, 0.35), rgba(16, 185, 129, 0.1));
+    bottom: -150px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+.bg-orb-3 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(225, 29, 72, 0.25), rgba(251, 91, 99, 0.05));
+    top: 40%;
+    left: 45%;
+    animation-delay: -9s;
+}
+
+@keyframes orbFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, 60px) scale(1.08); }
+    100% { transform: translate(-30px, -40px) scale(0.95); }
+}
+
+@keyframes rise-in {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom Leaflet Map styling overrides for light/dark mode */
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-md);
+    z-index: 10;
+}
+
+.dark .leaflet-tile {
+    filter: brightness(0.7) invert(1) contrast(1.2) hue-rotate(200deg) saturate(0.3);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(123, 145, 169, 0.3);
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(123, 145, 169, 0.5);
+}

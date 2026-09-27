@@ -1,0 +1,2892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Connect | Intelligent Blood Mobilisation Platform</title>
+
+    <meta
+        name="description"
+        content="Blood Connect - Intelligent blood donation mobilisation, camp coordination and emergency donor response platform."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     AUTHENTICATION
+========================================================= -->
+
+<div id="authScreen" class="auth-screen">
+
+    <div class="auth-orb orb-1"></div>
+    <div class="auth-orb orb-2"></div>
+    <div class="auth-orb orb-3"></div>
+
+    <div class="auth-wrapper">
+
+        <div class="auth-brand">
+
+            <div class="brand large-brand">
+                <span class="brand-mark">✦</span>
+                <span>Blood<span>Connect</span></span>
+            </div>
+
+            <div class="auth-tag">
+                NATIONAL BLOOD MOBILISATION NETWORK
+            </div>
+
+            <h1>
+                A smarter network
+                <span>for every donation.</span>
+            </h1>
+
+            <p>
+                Discover camps, coordinate emergency mobilisation,
+                manage donor communication and turn community response
+                into an intelligent digital network.
+            </p>
+
+            <div class="auth-highlights">
+
+                <div class="auth-highlight">
+                    <div class="highlight-icon">◇</div>
+                    <div>
+                        <strong>Smart Camp Discovery</strong>
+                        <small>Find upcoming and ongoing donation camps.</small>
+                    </div>
+                </div>
+
+                <div class="auth-highlight">
+                    <div class="highlight-icon cyan">⌁</div>
+                    <div>
+                        <strong>Emergency Mobilisation</strong>
+                        <small>Coordinate consent-aware donor response.</small>
+                    </div>
+                </div>
+
+                <div class="auth-highlight">
+                    <div class="highlight-icon red">+</div>
+                    <div>
+                        <strong>Intelligent Matching</strong>
+                        <small>Blood group, region, language and HLA fields.</small>
+                    </div>
+                </div>
+
+                <div class="auth-highlight">
+                    <div class="highlight-icon green">✓</div>
+                    <div>
+                        <strong>Consent First</strong>
+                        <small>Keep donor communication transparent.</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="auth-stat-strip">
+
+                <div>
+                    <strong>24K+</strong>
+                    <span>Donors</span>
+                </div>
+
+                <div>
+                    <strong>180+</strong>
+                    <span>Camps</span>
+                </div>
+
+                <div>
+                    <strong>28</strong>
+                    <span>Regions</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="auth-card glass-card">
+
+            <div class="auth-card-status">
+                <span class="status-pulse"></span>
+                Secure Blood Connect Access
+            </div>
+
+            <div class="auth-tabs">
+
+                <button
+                    class="auth-tab active"
+                    data-auth-tab="signin"
+                >
+                    Sign In
+                </button>
+
+                <button
+                    class="auth-tab"
+                    data-auth-tab="signup"
+                >
+                    Sign Up
+                </button>
+
+            </div>
+
+
+            <!-- SIGN IN -->
+
+            <form id="signInForm" class="auth-form active">
+
+                <div class="form-title">
+                    <h2>Welcome back</h2>
+                    <p>Sign in to continue to Blood Connect.</p>
+                </div>
+
+                <label class="field">
+                    <span>Email or phone</span>
+                    <input
+                        id="loginIdentifier"
+                        type="text"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+
+                    <div class="password-field">
+
+                        <input
+                            id="loginPassword"
+                            type="password"
+                            placeholder="Enter password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-password="loginPassword"
+                        >
+                            ◉
+                        </button>
+
+                    </div>
+                </label>
+
+                <div class="auth-row">
+
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+
+                    <button
+                        type="button"
+                        class="link-button"
+                        id="forgotPassword"
+                    >
+                        Forgot password?
+                    </button>
+
+                </div>
+
+                <button class="primary-btn wide" type="submit">
+                    <span>Sign In</span>
+                    <b>→</b>
+                </button>
+
+                <div class="auth-demo-note">
+                    <span>⌁</span>
+                    Prototype authentication. Connect your backend for production.
+                </div>
+
+            </form>
+
+
+            <!-- SIGN UP -->
+
+            <form id="signUpForm" class="auth-form">
+
+                <div class="form-title">
+                    <h2>Create your account</h2>
+                    <p>Join the Blood Connect network.</p>
+                </div>
+
+                <div class="two-fields">
+
+                    <label class="field">
+                        <span>Full name</span>
+                        <input
+                            id="signupName"
+                            type="text"
+                            placeholder="Your name"
+                            required
+                        >
+                    </label>
+
+                    <label class="field">
+                        <span>Blood group</span>
+                        <select id="signupBlood" required>
+                            <option value="">Select</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </label>
+
+                </div>
+
+                <label class="field">
+                    <span>Email</span>
+                    <input
+                        id="signupEmail"
+                        type="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </label>
+
+                <label class="field">
+                    <span>Phone</span>
+                    <input
+                        id="signupPhone"
+                        type="tel"
+                        placeholder="+91 XXXXX XXXXX"
+                        required
+                    >
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+                    <input
+                        id="signupPassword"
+                        type="password"
+                        placeholder="Create a password"
+                        required
+                    >
+                </label>
+
+                <label class="checkbox terms">
+                    <input type="checkbox" required>
+                    <span>
+                        I agree to Blood Connect's platform terms and consent controls.
+                    </span>
+                </label>
+
+                <button class="primary-btn wide" type="submit">
+                    <span>Create Account</span>
+                    <b>→</b>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================================================
+     MAIN APPLICATION
+========================================================= -->
+
+<div id="app" class="app hidden">
+
+    <div class="background-grid"></div>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar glass-card">
+
+        <button class="brand brand-button" data-section="home">
+            <span class="brand-mark">✦</span>
+            <span>Blood<span>Connect</span></span>
+        </button>
+
+        <nav class="desktop-nav">
+
+            <button
+                class="nav-item active"
+                data-section="home"
+            >
+                Overview
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="camps"
+            >
+                Camps
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="emergency"
+            >
+                Emergency
+                <span class="nav-alert">27</span>
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="intelligence"
+            >
+                Intelligence
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="donor"
+            >
+                Donor Space
+            </button>
+
+        </nav>
+
+        <div class="nav-right">
+
+            <button
+                class="nav-icon-btn"
+                id="commandButton"
+                title="Command palette"
+            >
+                ⌘
+            </button>
+
+            <button
+                class="nav-icon-btn notification-button"
+                id="notificationButton"
+                title="Notifications"
+            >
+                ♢
+                <span class="notification-count">3</span>
+            </button>
+
+            <button
+                class="theme-button"
+                id="themeToggle"
+            >
+                <span class="theme-symbol">☾</span>
+                <span>Dark Mode</span>
+            </button>
+
+            <button
+                class="profile-button"
+                id="profileButton"
+            >
+                <span class="avatar" id="navAvatar">MQ</span>
+
+                <span class="profile-info">
+                    <strong id="navName">Mahi Qureshi</strong>
+                    <small>Donor</small>
+                </span>
+
+                <span>⌄</span>
+            </button>
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuButton"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MOBILE NAV -->
+
+    <div
+        class="mobile-nav glass-card"
+        id="mobileNav"
+    >
+        <button data-section="home">Overview</button>
+        <button data-section="camps">Camps</button>
+        <button data-section="emergency">Emergency</button>
+        <button data-section="intelligence">Intelligence</button>
+        <button data-section="donor">Donor Space</button>
+    </div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             HOME
+        ================================================== -->
+
+        <section
+            class="page-section active"
+            id="home"
+        >
+
+            <div class="hero">
+
+                <div class="hero-copy">
+
+                    <div class="eyebrow">
+                        <span class="live-indicator"></span>
+                        NATIONAL BLOOD MOBILISATION NETWORK
+                    </div>
+
+                    <h1>
+                        A smarter network
+                        <span>for every donation.</span>
+                    </h1>
+
+                    <p>
+                        Discover donation camps, respond to emergency
+                        mobilisation requests and manage your donor journey
+                        through one intelligent platform.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="primary-btn"
+                            data-section="camps"
+                        >
+                            Explore Camps
+                            <b>→</b>
+                        </button>
+
+                        <button
+                            class="secondary-btn"
+                            data-section="emergency"
+                        >
+                            Emergency Request
+                            <b>↗</b>
+                        </button>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <span>✓ Consent-aware</span>
+                        <span>✓ Multi-language</span>
+                        <span>✓ Data-driven</span>
+                        <span>✓ Scalable</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NETWORK CARD -->
+
+                <div class="network-card glass-card">
+
+                    <div class="network-card-head">
+
+                        <div>
+                            <span>LIVE NETWORK</span>
+                            <h3>Mobilisation Pulse</h3>
+                        </div>
+
+                        <div class="live-badge">
+                            <i></i>
+                            LIVE
+                        </div>
+
+                    </div>
+
+                    <div class="network-visual">
+
+                        <div class="network-lines"></div>
+
+                        <div class="network-point point-1">D</div>
+                        <div class="network-point point-2">C</div>
+                        <div class="network-point point-3">E</div>
+                        <div class="network-point point-4">+</div>
+
+                        <div class="network-core">
+                            <div class="core-ring"></div>
+                            <strong>18,426</strong>
+                            <span>active donors</span>
+                        </div>
+
+                    </div>
+
+                    <div class="network-metrics">
+
+                        <div>
+                            <i class="blue"></i>
+                            <span>Active</span>
+                            <strong>18.4K</strong>
+                        </div>
+
+                        <div>
+                            <i class="cyan"></i>
+                            <span>Responding</span>
+                            <strong>2.8K</strong>
+                        </div>
+
+                        <div>
+                            <i class="red"></i>
+                            <span>Emergency</span>
+                            <strong>27</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SMART SEARCH -->
+
+            <div class="smart-search glass-card">
+
+                <div class="smart-search-head">
+
+                    <div class="smart-icon">✦</div>
+
+                    <div>
+                        <span>Blood Connect Smart Search</span>
+                        <small>
+                            Search camps, regions, blood groups and optional HLA information
+                        </small>
+                    </div>
+
+                </div>
+
+                <div class="search-grid">
+
+                    <div class="search-control large">
+
+                        <span>⌕</span>
+
+                        <input
+                            id="smartSearch"
+                            type="text"
+                            placeholder="Search camps, cities or organisations..."
+                        >
+
+                    </div>
+
+                    <select id="searchBlood">
+                        <option value="">Blood Group</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select>
+
+
+                    <!-- HLA INPUT -->
+
+                    <div class="search-control">
+
+                        <span class="hla-label">HLA</span>
+
+                        <input
+                            id="hlaSearch"
+                            type="text"
+                            placeholder="Enter HLA typing"
+                        >
+
+                    </div>
+
+
+                    <select id="searchLocation">
+
+                        <option value="">Location</option>
+                        <option>Nagpur</option>
+                        <option>Mumbai</option>
+                        <option>Pune</option>
+                        <option>Delhi</option>
+                        <option>Bengaluru</option>
+                        <option>Hyderabad</option>
+
+                    </select>
+
+                    <button
+                        class="primary-btn search-btn"
+                        id="searchButton"
+                    >
+                        Search
+                        <b>→</b>
+                    </button>
+
+                </div>
+
+                <div class="search-note">
+                    HLA is an optional administrative search field.
+                    Clinical compatibility decisions must be made by qualified healthcare professionals.
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+                <article class="stat-card glass-card">
+
+                    <div class="stat-icon blue-icon">♙</div>
+
+                    <div>
+                        <span>Registered Donors</span>
+                        <strong
+                            class="counter"
+                            data-value="24860"
+                        >
+                            0
+                        </strong>
+                        <small class="positive">+12.8% this month</small>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card glass-card">
+
+                    <div class="stat-icon cyan-icon">◇</div>
+
+                    <div>
+                        <span>Active Camps</span>
+                        <strong
+                            class="counter"
+                            data-value="184"
+                        >
+                            0
+                        </strong>
+                        <small>Across 28 regions</small>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card glass-card">
+
+                    <div class="stat-icon red-icon">+</div>
+
+                    <div>
+                        <span>Emergency Requests</span>
+                        <strong
+                            class="counter"
+                            data-value="27"
+                        >
+                            0
+                        </strong>
+                        <small class="danger-text">Needs response</small>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card glass-card">
+
+                    <div class="stat-icon green-icon">✓</div>
+
+                    <div>
+                        <span>Lives Supported</span>
+                        <strong
+                            class="counter"
+                            data-value="98142"
+                        >
+                            0
+                        </strong>
+                        <small class="positive">Network impact</small>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="section-heading">
+
+                <div>
+                    <span>CONTROL CENTRE</span>
+                    <h2>Everything connected</h2>
+                    <p>
+                        Move from discovery to response without leaving the platform.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+                <button
+                    class="quick-card glass-card"
+                    data-section="camps"
+                >
+                    <div class="quick-icon">◇</div>
+
+                    <div>
+                        <h3>Find a Camp</h3>
+                        <p>
+                            Discover upcoming and ongoing donation camps.
+                        </p>
+                    </div>
+
+                    <b>→</b>
+                </button>
+
+
+                <button
+                    class="quick-card glass-card"
+                    data-section="emergency"
+                >
+                    <div class="quick-icon red-bg">+</div>
+
+                    <div>
+                        <h3>Emergency Response</h3>
+                        <p>
+                            Coordinate an urgent donor mobilisation request.
+                        </p>
+                    </div>
+
+                    <b>→</b>
+                </button>
+
+
+                <button
+                    class="quick-card glass-card"
+                    data-section="intelligence"
+                >
+                    <div class="quick-icon cyan-bg">✦</div>
+
+                    <div>
+                        <h3>Intelligence Centre</h3>
+                        <p>
+                            Explore turnout predictions and mobilisation analytics.
+                        </p>
+                    </div>
+
+                    <b>→</b>
+                </button>
+
+
+                <button
+                    class="quick-card glass-card"
+                    data-section="donor"
+                >
+                    <div class="quick-icon green-bg">♙</div>
+
+                    <div>
+                        <h3>Donor Space</h3>
+                        <p>
+                            Manage profile, consent and donation activity.
+                        </p>
+                    </div>
+
+                    <b>→</b>
+                </button>
+
+            </div>
+
+
+            <!-- ACTIVE EMERGENCY -->
+
+            <div class="section-heading compact">
+
+                <div>
+                    <span>LIVE RESPONSE</span>
+                    <h2>Emergency pulse</h2>
+                </div>
+
+                <button
+                    class="text-action"
+                    data-section="emergency"
+                >
+                    View all →
+                </button>
+
+            </div>
+
+
+            <div
+                class="emergency-preview"
+                id="emergencyPreview"
+            ></div>
+
+
+            <!-- IMPACT -->
+
+            <div class="impact-banner glass-card">
+
+                <div class="impact-copy">
+
+                    <span>THE BLOOD CONNECT NETWORK</span>
+
+                    <h2>
+                        From one donor
+                        <span>to a connected response.</span>
+                    </h2>
+
+                    <p>
+                        Blood Connect creates a digital layer connecting
+                        donors, camps, organisers and emergency mobilisation.
+                    </p>
+
+                </div>
+
+                <div class="impact-orbit">
+
+                    <div class="orbit-ring ring-a"></div>
+                    <div class="orbit-ring ring-b"></div>
+                    <div class="orbit-ring ring-c"></div>
+
+                    <div class="orbit-core">
+                        <span>BC</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CAMPS
+        ================================================== -->
+
+        <section
+            class="page-section"
+            id="camps"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        <span class="live-indicator"></span>
+                        BLOOD CONNECT CAMPS
+                    </div>
+
+                    <h1>
+                        Discover your next
+                        <span>donation camp.</span>
+                    </h1>
+
+                    <p>
+                        Browse upcoming and ongoing camps across the network.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="createCampButton"
+                >
+                    + Host a Camp
+                </button>
+
+            </div>
+
+
+            <!-- CAMP FILTER BAR -->
+
+            <div class="filter-bar glass-card">
+
+                <div class="filter-search">
+
+                    <span>⌕</span>
+
+                    <input
+                        id="campSearch"
+                        type="text"
+                        placeholder="Search camps or organisations..."
+                    >
+
+                </div>
+
+                <select id="campBloodFilter">
+                    <option value="">All blood groups</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                </select>
+
+                <select id="campLocationFilter">
+                    <option value="">All locations</option>
+                    <option>Nagpur</option>
+                    <option>Mumbai</option>
+                    <option>Pune</option>
+                    <option>Delhi</option>
+                    <option>Bengaluru</option>
+                    <option>Hyderabad</option>
+                </select>
+
+                <button
+                    class="secondary-btn"
+                    id="clearCampFilters"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+
+            <!-- CAMP TABS -->
+
+            <div class="camp-tabs">
+
+                <button
+                    class="camp-tab active"
+                    data-camp-tab="upcoming"
+                >
+                    Upcoming Camps
+                    <span id="upcomingCount">0</span>
+                </button>
+
+                <button
+                    class="camp-tab"
+                    data-camp-tab="ongoing"
+                >
+                    Ongoing Camps
+                    <span id="ongoingCount">0</span>
+                </button>
+
+            </div>
+
+
+            <div
+                class="camp-grid"
+                id="campGrid"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             EMERGENCY
+        ================================================== -->
+
+        <section
+            class="page-section"
+            id="emergency"
+        >
+
+            <div class="page-header emergency-header">
+
+                <div>
+
+                    <div class="eyebrow red-eyebrow">
+                        <span class="live-indicator red-live"></span>
+                        EMERGENCY RESPONSE NETWORK
+                    </div>
+
+                    <h1>
+                        Mobilise the right
+                        <span>response.</span>
+                    </h1>
+
+                    <p>
+                        Create and coordinate urgent donor mobilisation requests.
+                    </p>
+
+                </div>
+
+                <div class="emergency-status glass-card">
+                    <span class="danger-pulse"></span>
+                    <strong>27 active requests</strong>
+                    <small>Network status</small>
+                </div>
+
+            </div>
+
+
+            <div class="emergency-layout">
+
+                <!-- REQUEST FORM -->
+
+                <div class="emergency-form-card glass-card">
+
+                    <div class="card-title-row">
+
+                        <div>
+                            <span>CREATE REQUEST</span>
+                            <h2>Emergency blood request</h2>
+                        </div>
+
+                        <div class="red-icon-box">+</div>
+
+                    </div>
+
+                    <form id="emergencyForm">
+
+                        <div class="two-fields">
+
+                            <label class="field">
+                                <span>Blood group</span>
+
+                                <select id="emergencyBlood" required>
+                                    <option value="">Select</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                </select>
+                            </label>
+
+                            <label class="field">
+                                <span>Units required</span>
+                                <input
+                                    id="emergencyUnits"
+                                    type="number"
+                                    min="1"
+                                    max="20"
+                                    value="2"
+                                    required
+                                >
+                            </label>
+
+                        </div>
+
+                        <label class="field">
+                            <span>Hospital / institution</span>
+                            <input
+                                id="emergencyHospital"
+                                type="text"
+                                placeholder="Hospital name"
+                                required
+                            >
+                        </label>
+
+                        <label class="field">
+                            <span>Location</span>
+                            <input
+                                id="emergencyLocation"
+                                type="text"
+                                placeholder="City / area"
+                                required
+                            >
+                        </label>
+
+                        <label class="field">
+                            <span>Attendant contact</span>
+                            <input
+                                id="emergencyContact"
+                                type="tel"
+                                placeholder="+91 XXXXX XXXXX"
+                                required
+                            >
+                        </label>
+
+                        <div class="urgency-selector">
+
+                            <span>Urgency</span>
+
+                            <div class="urgency-options">
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="urgency"
+                                        value="Critical"
+                                        checked
+                                    >
+                                    <span class="critical-option">Critical</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="urgency"
+                                        value="High"
+                                    >
+                                    <span class="high-option">High</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="urgency"
+                                        value="Moderate"
+                                    >
+                                    <span class="moderate-option">Moderate</span>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <label class="field">
+                            <span>Additional note</span>
+                            <textarea
+                                id="emergencyNote"
+                                rows="3"
+                                placeholder="Add relevant administrative information..."
+                            ></textarea>
+                        </label>
+
+                        <button
+                            class="danger-button wide"
+                            type="submit"
+                        >
+                            Broadcast Emergency SOS
+                            <b>→</b>
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- MATCHING PANEL -->
+
+                <div class="matching-panel">
+
+                    <div class="matching-card glass-card">
+
+                        <div class="card-title-row">
+
+                            <div>
+                                <span>MOBILISATION ENGINE</span>
+                                <h2>Response chain</h2>
+                            </div>
+
+                            <div class="matching-live">
+                                LIVE
+                            </div>
+
+                        </div>
+
+                        <div class="response-chain">
+
+                            <div class="chain-step completed">
+                                <span>1</span>
+                                <strong>Notified</strong>
+                                <small>1,284</small>
+                            </div>
+
+                            <div class="chain-line"></div>
+
+                            <div class="chain-step completed">
+                                <span>2</span>
+                                <strong>Opened</strong>
+                                <small>864</small>
+                            </div>
+
+                            <div class="chain-line"></div>
+
+                            <div class="chain-step active-chain">
+                                <span>3</span>
+                                <strong>Interested</strong>
+                                <small>318</small>
+                            </div>
+
+                            <div class="chain-line"></div>
+
+                            <div class="chain-step">
+                                <span>4</span>
+                                <strong>Committed</strong>
+                                <small>126</small>
+                            </div>
+
+                            <div class="chain-line"></div>
+
+                            <div class="chain-step">
+                                <span>5</span>
+                                <strong>Completed</strong>
+                                <small>94</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="broadcast-card glass-card">
+
+                        <div class="broadcast-head">
+
+                            <div>
+                                <span>ADAPTIVE BROADCAST</span>
+                                <h2>Mobilisation radius</h2>
+                            </div>
+
+                            <strong id="radiusValue">25 km</strong>
+
+                        </div>
+
+                        <input
+                            id="radiusSlider"
+                            type="range"
+                            min="5"
+                            max="50"
+                            value="25"
+                            step="5"
+                        >
+
+                        <div class="range-labels">
+                            <span>5 km</span>
+                            <span>25 km</span>
+                            <span>50 km</span>
+                        </div>
+
+                        <div class="reachable-donors">
+
+                            <span>Potentially reachable opted-in donors</span>
+
+                            <strong id="reachableCount">
+                                1,284
+                            </strong>
+
+                        </div>
+
+                        <button
+                            class="secondary-btn wide"
+                            id="expandBroadcast"
+                        >
+                            Expand mobilisation radius
+                            <span>↗</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMERGENCY FEED -->
+
+            <div class="section-heading compact">
+
+                <div>
+                    <span>LIVE FEED</span>
+                    <h2>Active emergency requests</h2>
+                </div>
+
+            </div>
+
+            <div
+                class="emergency-list"
+                id="emergencyList"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             INTELLIGENCE
+        ================================================== -->
+
+        <section
+            class="page-section"
+            id="intelligence"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        <span class="live-indicator"></span>
+                        BLOOD CONNECT INTELLIGENCE
+                    </div>
+
+                    <h1>
+                        Understand mobilisation
+                        <span>before it happens.</span>
+                    </h1>
+
+                    <p>
+                        Prototype analytics for camp turnout, engagement and response.
+                    </p>
+
+                </div>
+
+                <button
+                    class="secondary-btn"
+                    id="demoModeButton"
+                >
+                    Run Demo Scenario
+                    <span>✦</span>
+                </button>
+
+            </div>
+
+
+            <!-- KPI -->
+
+            <div class="analytics-kpis">
+
+                <div class="analytics-kpi glass-card">
+                    <span>Registrations</span>
+                    <strong>1,842</strong>
+                    <small class="positive">+18.4%</small>
+                </div>
+
+                <div class="analytics-kpi glass-card">
+                    <span>Confirmed</span>
+                    <strong>1,392</strong>
+                    <small class="positive">75.6%</small>
+                </div>
+
+                <div class="analytics-kpi glass-card">
+                    <span>Predicted turnout</span>
+                    <strong>1,284</strong>
+                    <small>87% confidence</small>
+                </div>
+
+                <div class="analytics-kpi glass-card">
+                    <span>Reminder engagement</span>
+                    <strong>71%</strong>
+                    <small class="positive">+9.2%</small>
+                </div>
+
+            </div>
+
+
+            <div class="intelligence-grid">
+
+                <!-- TURNOUT -->
+
+                <div class="turnout-card glass-card">
+
+                    <div class="card-title-row">
+
+                        <div>
+                            <span>EXPLAINABLE MODEL</span>
+                            <h2>Turnout intelligence</h2>
+                        </div>
+
+                        <div class="confidence-badge">
+                            87% confidence
+                        </div>
+
+                    </div>
+
+                    <div class="turnout-visual">
+
+                        <div class="donut-chart">
+                            <div class="donut-inner">
+                                <strong>1,284</strong>
+                                <span>predicted</span>
+                            </div>
+                        </div>
+
+                        <div class="turnout-breakdown">
+
+                            <div>
+                                <span class="dot green"></span>
+                                <span>High likelihood</span>
+                                <strong>812</strong>
+                            </div>
+
+                            <div>
+                                <span class="dot amber"></span>
+                                <span>Moderate</span>
+                                <strong>326</strong>
+                            </div>
+
+                            <div>
+                                <span class="dot red"></span>
+                                <span>At risk</span>
+                                <strong>154</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="model-note">
+                        <strong>Prototype intelligence model</strong>
+                        <p>
+                            This demonstration uses simulated factors including
+                            confirmation rate, reminder engagement, registration timing
+                            and historical attendance patterns.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- INSIGHTS -->
+
+                <div class="insights-card glass-card">
+
+                    <div class="card-title-row">
+
+                        <div>
+                            <span>AI INSIGHTS</span>
+                            <h2>Recommended actions</h2>
+                        </div>
+
+                        <div class="spark-icon">✦</div>
+
+                    </div>
+
+                    <div class="insight-list">
+
+                        <div class="insight">
+                            <div class="insight-number">01</div>
+                            <div>
+                                <strong>Reminder coverage is below target</strong>
+                                <p>
+                                    32 registered donors have not opened the latest reminder.
+                                </p>
+                                <button
+                                    class="small-action"
+                                    data-action="reminder"
+                                >
+                                    Review reminder group →
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="insight">
+                            <div class="insight-number">02</div>
+                            <div>
+                                <strong>Marathi engagement is increasing</strong>
+                                <p>
+                                    Marathi-language communication shows stronger recent engagement.
+                                </p>
+                                <button
+                                    class="small-action"
+                                    data-action="language"
+                                >
+                                    Open language analytics →
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="insight">
+                            <div class="insight-number">03</div>
+                            <div>
+                                <strong>Capacity risk detected</strong>
+                                <p>
+                                    One upcoming camp is approaching its registration target.
+                                </p>
+                                <button
+                                    class="small-action"
+                                    data-action="capacity"
+                                >
+                                    Review camp →
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WHAT IF -->
+
+            <div class="what-if-card glass-card">
+
+                <div class="what-if-copy">
+
+                    <span>SCENARIO SIMULATOR</span>
+
+                    <h2>
+                        What if mobilisation changes?
+                    </h2>
+
+                    <p>
+                        Adjust campaign variables and see the simulated turnout response.
+                    </p>
+
+                </div>
+
+                <div class="simulator-controls">
+
+                    <label>
+                        Reminder coverage
+                        <strong id="reminderValue">70%</strong>
+                        <input
+                            id="reminderSlider"
+                            type="range"
+                            min="30"
+                            max="100"
+                            value="70"
+                        >
+                    </label>
+
+                    <label>
+                        Confirmation rate
+                        <strong id="confirmationValue">76%</strong>
+                        <input
+                            id="confirmationSlider"
+                            type="range"
+                            min="40"
+                            max="100"
+                            value="76"
+                        >
+                    </label>
+
+                    <div class="simulation-result">
+
+                        <span>Simulated turnout</span>
+
+                        <strong id="simulationNumber">
+                            1,284
+                        </strong>
+
+                        <small>
+                            prototype scenario
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NATIONAL OBSERVATORY -->
+
+            <div class="observatory-card glass-card">
+
+                <div class="card-title-row">
+
+                    <div>
+                        <span>NATIONAL MOBILISATION OBSERVATORY</span>
+                        <h2>India network pulse</h2>
+                    </div>
+
+                    <span class="demo-label">DEMO DATA</span>
+
+                </div>
+
+                <div class="india-network">
+
+                    <div class="region-card">
+                        <span>West</span>
+                        <strong>42</strong>
+                        <small>active camps</small>
+                    </div>
+
+                    <div class="region-card">
+                        <span>North</span>
+                        <strong>38</strong>
+                        <small>active camps</small>
+                    </div>
+
+                    <div class="region-card">
+                        <span>South</span>
+                        <strong>57</strong>
+                        <small>active camps</small>
+                    </div>
+
+                    <div class="region-card">
+                        <span>East</span>
+                        <strong>31</strong>
+                        <small>active camps</small>
+                    </div>
+
+                    <div class="region-card">
+                        <span>Central</span>
+                        <strong>16</strong>
+                        <small>active camps</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DONOR SPACE
+        ================================================== -->
+
+        <section
+            class="page-section"
+            id="donor"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        <span class="live-indicator"></span>
+                        MY DONOR SPACE
+                    </div>
+
+                    <h1>
+                        Your donor journey,
+                        <span>connected.</span>
+                    </h1>
+
+                    <p>
+                        Manage your profile, camps, consent and digital donor identity.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="openPassButton"
+                >
+                    View Digital Pass
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+
+            <div class="donor-layout">
+
+                <!-- PROFILE -->
+
+                <div class="profile-card glass-card">
+
+                    <div class="profile-cover"></div>
+
+                    <div class="profile-body">
+
+                        <div class="large-avatar" id="largeAvatar">
+                            MQ
+                        </div>
+
+                        <div class="profile-name">
+
+                            <h2 id="donorName">
+                                Mahi Qureshi
+                            </h2>
+
+                            <span>
+                                Verified donor profile
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="icon-action"
+                            id="editProfile"
+                        >
+                            ✎
+                        </button>
+
+                    </div>
+
+                    <div class="profile-details">
+
+                        <div>
+                            <span>Blood Group</span>
+                            <strong id="donorBlood">O+</strong>
+                        </div>
+
+                        <div>
+                            <span>Language</span>
+                            <strong>English</strong>
+                        </div>
+
+                        <div>
+                            <span>Region</span>
+                            <strong>Nagpur</strong>
+                        </div>
+
+                        <div>
+                            <span>Donor ID</span>
+                            <strong id="donorId">BC-48291</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMPACT -->
+
+                <div class="donor-impact glass-card">
+
+                    <div>
+                        <span>COMMUNITY IMPACT</span>
+                        <h2>Community Champion</h2>
+                        <p>
+                            Your participation helps strengthen the mobilisation network.
+                        </p>
+                    </div>
+
+                    <div class="impact-score">
+
+                        <strong>840</strong>
+                        <span>impact points</span>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <span style="width:78%"></span>
+                    </div>
+
+                    <div class="badge-row">
+
+                        <div class="achievement unlocked">
+                            <span>✓</span>
+                            <small>First Camp</small>
+                        </div>
+
+                        <div class="achievement unlocked">
+                            <span>+</span>
+                            <small>Responder</small>
+                        </div>
+
+                        <div class="achievement unlocked">
+                            <span>◇</span>
+                            <small>Consistent</small>
+                        </div>
+
+                        <div class="achievement">
+                            <span>★</span>
+                            <small>Champion</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DONOR TOOLS -->
+
+            <div class="donor-tools">
+
+                <div class="donor-tool-card glass-card">
+
+                    <div class="tool-icon">◇</div>
+
+                    <h3>Upcoming Camps</h3>
+
+                    <strong id="donorUpcomingCount">3</strong>
+
+                    <button
+                        class="small-action"
+                        data-section="camps"
+                    >
+                        Explore camps →
+                    </button>
+
+                </div>
+
+
+                <div class="donor-tool-card glass-card">
+
+                    <div class="tool-icon cyan-bg">♢</div>
+
+                    <h3>Saved Camps</h3>
+
+                    <strong>5</strong>
+
+                    <button
+                        class="small-action"
+                        data-action="saved"
+                    >
+                        View saved →
+                    </button>
+
+                </div>
+
+
+                <div class="donor-tool-card glass-card">
+
+                    <div class="tool-icon green-bg">✓</div>
+
+                    <h3>Camp Attendance</h3>
+
+                    <strong>8</strong>
+
+                    <button
+                        class="small-action"
+                        data-action="history"
+                    >
+                        View history →
+                    </button>
+
+                </div>
+
+
+                <div class="donor-tool-card glass-card">
+
+                    <div class="tool-icon red-bg">⌁</div>
+
+                    <h3>Emergency Consent</h3>
+
+                    <strong id="emergencyConsentStatus">
+                        Enabled
+                    </strong>
+
+                    <button
+                        class="small-action"
+                        id="manageConsent"
+                    >
+                        Manage consent →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONSENT -->
+
+            <div class="consent-card glass-card">
+
+                <div class="card-title-row">
+
+                    <div>
+                        <span>PRIVACY & CONSENT</span>
+                        <h2>Communication controls</h2>
+                    </div>
+
+                    <span class="secure-chip">Consent first</span>
+
+                </div>
+
+                <div class="consent-list">
+
+                    <label class="consent-row">
+
+                        <div>
+                            <strong>Emergency blood requests</strong>
+                            <small>
+                                Allow eligible emergency mobilisation notifications.
+                            </small>
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="emergencyConsent"
+                            checked
+                        >
+
+                        <span class="toggle"></span>
+
+                    </label>
+
+
+                    <label class="consent-row">
+
+                        <div>
+                            <strong>WhatsApp notifications</strong>
+                            <small>
+                                Receive permitted camp and mobilisation updates.
+                            </small>
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="whatsappConsent"
+                            checked
+                        >
+
+                        <span class="toggle"></span>
+
+                    </label>
+
+
+                    <label class="consent-row">
+
+                        <div>
+                            <strong>SMS notifications</strong>
+                            <small>
+                                Receive important registration and camp reminders.
+                            </small>
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="smsConsent"
+                            checked
+                        >
+
+                        <span class="toggle"></span>
+
+                    </label>
+
+                </div>
+
+                <div class="consent-note">
+                    Consent changes are recorded in the prototype audit ledger.
+                </div>
+
+            </div>
+
+
+            <!-- DONATION TIMELINE -->
+
+            <div class="timeline-card glass-card">
+
+                <div class="card-title-row">
+
+                    <div>
+                        <span>ACTIVITY</span>
+                        <h2>Donor journey</h2>
+                    </div>
+
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item completed">
+                        <span></span>
+                        <div>
+                            <strong>Camp attended</strong>
+                            <small>Community Health Camp · 18 Sep 2026</small>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item completed">
+                        <span></span>
+                        <div>
+                            <strong>Registration confirmed</strong>
+                            <small>City Mobilisation Camp · 05 Sep 2026</small>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span></span>
+                        <div>
+                            <strong>Next opportunity</strong>
+                            <small>Upcoming camps are available in your region.</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCANNER
+        ================================================== -->
+
+        <section
+            class="page-section"
+            id="scanner"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        <span class="live-indicator"></span>
+                        ORGANISER SCANNER
+                    </div>
+
+                    <h1>
+                        Camp
+                        <span>check-in.</span>
+                    </h1>
+
+                    <p>
+                        Scan or manually verify a donor pass.
+                    </p>
+
+                </div>
+
+                <button
+                    class="secondary-btn"
+                    data-section="camps"
+                >
+                    Back to Camps
+                </button>
+
+            </div>
+
+
+            <div class="scanner-layout">
+
+                <div class="scanner-card glass-card">
+
+                    <div class="scanner-frame">
+
+                        <div class="scanner-corner corner-a"></div>
+                        <div class="scanner-corner corner-b"></div>
+                        <div class="scanner-corner corner-c"></div>
+                        <div class="scanner-corner corner-d"></div>
+
+                        <div class="scanner-line"></div>
+
+                        <div class="scanner-center">
+                            QR
+                        </div>
+
+                    </div>
+
+                    <div class="scanner-status">
+                        Camera simulation active
+                    </div>
+
+                    <button
+                        class="primary-btn wide"
+                        id="simulateScan"
+                    >
+                        Simulate QR Scan
+                        <span>⌁</span>
+                    </button>
+
+                </div>
+
+
+                <div class="manual-scan glass-card">
+
+                    <span>BACKUP SEARCH</span>
+
+                    <h2>Find donor manually</h2>
+
+                    <label class="field">
+                        <span>Phone or ticket ID</span>
+                        <input
+                            id="manualTicket"
+                            type="text"
+                            placeholder="BC-TKT-48291"
+                        >
+                    </label>
+
+                    <button
+                        class="secondary-btn wide"
+                        id="manualScanButton"
+                    >
+                        Verify Ticket
+                        <span>→</span>
+                    </button>
+
+                    <div
+                        class="scan-result"
+                        id="scanResult"
+                    >
+                        Waiting for verification...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             AUDIT
+        ================================================== -->
+
+        <section
+            class="page-section"
+            id="audit"
+        >
+
+            <div class="page-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        <span class="live-indicator"></span>
+                        SECURITY & AUDIT
+                    </div>
+
+                    <h1>
+                        Transparent
+                        <span>activity.</span>
+                    </h1>
+
+                    <p>
+                        Review platform actions and export the audit ledger.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="exportAudit"
+                >
+                    Export CSV
+                    <span>↓</span>
+                </button>
+
+            </div>
+
+
+            <div class="audit-card glass-card">
+
+                <div class="audit-toolbar">
+
+                    <div class="search-control">
+
+                        <span>⌕</span>
+
+                        <input
+                            id="auditSearch"
+                            type="text"
+                            placeholder="Search audit events..."
+                        >
+
+                    </div>
+
+                    <span class="secure-chip">
+                        Audit ledger
+                    </span>
+
+                </div>
+
+                <div class="audit-table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Time</th>
+                                <th>Action</th>
+                                <th>User</th>
+                                <th>Module</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="auditTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <div class="brand">
+                <span class="brand-mark">✦</span>
+                <span>Blood<span>Connect</span></span>
+            </div>
+
+            <p>
+                Intelligent donor mobilisation and emergency coordination.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <button data-section="home">Overview</button>
+            <button data-section="camps">Camps</button>
+            <button data-section="emergency">Emergency</button>
+            <button data-section="intelligence">Intelligence</button>
+
+        </div>
+
+        <div class="footer-note">
+            Prototype platform · No medical diagnosis or clinical inventory
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION PANEL
+========================================================= -->
+
+<div
+    class="side-panel"
+    id="notificationPanel"
+>
+
+    <div class="panel-header">
+
+        <div>
+            <span>YOUR ACTIVITY</span>
+            <h2>Notifications</h2>
+        </div>
+
+        <button id="closeNotifications">×</button>
+
+    </div>
+
+    <div class="notification-list">
+
+        <div class="notification-item unread">
+
+            <div class="notification-icon cyan-bg">◇</div>
+
+            <div>
+                <strong>Camp registration confirmed</strong>
+                <p>Your registration for City Mobilisation Camp is confirmed.</p>
+                <small>8 min ago</small>
+            </div>
+
+        </div>
+
+
+        <div class="notification-item unread">
+
+            <div class="notification-icon red-bg">+</div>
+
+            <div>
+                <strong>Emergency request nearby</strong>
+                <p>An opted-in emergency mobilisation request is active.</p>
+                <small>24 min ago</small>
+            </div>
+
+        </div>
+
+
+        <div class="notification-item unread">
+
+            <div class="notification-icon green-bg">✓</div>
+
+            <div>
+                <strong>Profile updated</strong>
+                <p>Your communication preferences are active.</p>
+                <small>1 hr ago</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     COMMAND PALETTE
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="commandModal"
+>
+
+    <div class="command-modal glass-card">
+
+        <div class="command-search">
+
+            <span>⌘</span>
+
+            <input
+                id="commandSearch"
+                type="text"
+                placeholder="Search Blood Connect..."
+                autofocus
+            >
+
+            <kbd>ESC</kbd>
+
+        </div>
+
+        <div
+            class="command-results"
+            id="commandResults"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     CAMP DETAIL MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="campModal"
+>
+
+    <div class="modal-card glass-card large-modal">
+
+        <button
+            class="modal-close"
+            data-close="campModal"
+        >
+            ×
+        </button>
+
+        <div
+            class="camp-detail"
+            id="campDetail"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     REGISTRATION MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="registrationModal"
+>
+
+    <div class="modal-card glass-card">
+
+        <button
+            class="modal-close"
+            data-close="registrationModal"
+        >
+            ×
+        </button>
+
+        <div class="modal-title">
+
+            <span>STEP <b id="registrationStepNumber">1</b> OF 3</span>
+
+            <h2 id="registrationTitle">
+                Donor information
+            </h2>
+
+            <p id="registrationSubtitle">
+                Tell us who is attending this camp.
+            </p>
+
+        </div>
+
+        <form id="registrationForm">
+
+            <div
+                class="registration-step active"
+                data-step="1"
+            >
+
+                <label class="field">
+                    <span>Full name</span>
+                    <input
+                        id="regName"
+                        type="text"
+                        required
+                    >
+                </label>
+
+                <label class="field">
+                    <span>Phone</span>
+                    <input
+                        id="regPhone"
+                        type="tel"
+                        required
+                    >
+                </label>
+
+                <label class="field">
+                    <span>Email</span>
+                    <input
+                        id="regEmail"
+                        type="email"
+                        required
+                    >
+                </label>
+
+                <div class="two-fields">
+
+                    <label class="field">
+                        <span>Blood group</span>
+
+                        <select id="regBlood" required>
+                            <option value="">Select</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+
+                    </label>
+
+                    <label class="field">
+                        <span>Preferred language</span>
+
+                        <select id="regLanguage">
+                            <option>English</option>
+                            <option>Hindi</option>
+                            <option>Marathi</option>
+                            <option>Tamil</option>
+                            <option>Telugu</option>
+                            <option>Bengali</option>
+                            <option>Kannada</option>
+                            <option>Malayalam</option>
+                        </select>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="registration-step"
+                data-step="2"
+            >
+
+                <div class="consent-box">
+
+                    <div>
+                        <strong>This camp reminders</strong>
+                        <small>
+                            Allow reminders for this specific camp.
+                        </small>
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        id="regCampConsent"
+                        checked
+                    >
+
+                    <span class="toggle"></span>
+
+                </div>
+
+                <div class="consent-box">
+
+                    <div>
+                        <strong>Emergency requests</strong>
+                        <small>
+                            Allow future emergency mobilisation notifications.
+                        </small>
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        id="regEmergencyConsent"
+                        checked
+                    >
+
+                    <span class="toggle"></span>
+
+                </div>
+
+                <div class="consent-box">
+
+                    <div>
+                        <strong>WhatsApp / SMS</strong>
+                        <small>
+                            Receive permitted communication through selected channels.
+                        </small>
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        id="regCommunicationConsent"
+                        checked
+                    >
+
+                    <span class="toggle"></span>
+
+                </div>
+
+                <div class="consent-warning">
+                    You can withdraw communication consent through your Donor Space.
+                </div>
+
+            </div>
+
+
+            <div
+                class="registration-step"
+                data-step="3"
+            >
+
+                <div class="precheck">
+
+                    <div class="precheck-icon">✓</div>
+
+                    <h3>Administrative pre-check</h3>
+
+                    <p>
+                        This checklist is not medical screening.
+                        Final eligibility is determined by qualified healthcare
+                        professionals at the camp.
+                    </p>
+
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            id="ageCheck"
+                        >
+                        <span>I confirm I meet the stated age requirement.</span>
+                    </label>
+
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            id="weightCheck"
+                        >
+                        <span>I confirm I meet the stated weight requirement.</span>
+                    </label>
+
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            id="professionalCheck"
+                        >
+                        <span>I understand final medical eligibility is checked on-site.</span>
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="registration-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="registrationBack"
+                >
+                    Back
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="registrationNext"
+                >
+                    Continue
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DIGITAL PASS MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="passModal"
+>
+
+    <div class="modal-card glass-card pass-modal">
+
+        <button
+            class="modal-close"
+            data-close="passModal"
+        >
+            ×
+        </button>
+
+        <div class="pass-header">
+
+            <div>
+                <span>DIGITAL DONOR PASS</span>
+                <h2>Blood Connect</h2>
+            </div>
+
+            <span class="verified-chip">✓ Verified</span>
+
+        </div>
+
+        <div class="digital-pass">
+
+            <div class="pass-main">
+
+                <div>
+                    <span>DONOR</span>
+                    <h2 id="passName">Mahi Qureshi</h2>
+                </div>
+
+                <div class="pass-info-grid">
+
+                    <div>
+                        <span>Blood Group</span>
+                        <strong id="passBlood">O+</strong>
+                    </div>
+
+                    <div>
+                        <span>Ticket ID</span>
+                        <strong id="passTicket">BC-TKT-48291</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="qr-box">
+
+                <div class="fake-qr" id="fakeQR">
+                    <span>BC</span>
+                </div>
+
+                <small>Scan at camp</small>
+
+            </div>
+
+        </div>
+
+        <div class="pass-actions">
+
+            <button
+                class="secondary-btn"
+                id="printPass"
+            >
+                Print Pass
+            </button>
+
+            <button
+                class="primary-btn"
+                id="downloadPass"
+            >
+                Download
+                <span>↓</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     CREATE CAMP MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="createCampModal"
+>
+
+    <div class="modal-card glass-card">
+
+        <button
+            class="modal-close"
+            data-close="createCampModal"
+        >
+            ×
+        </button>
+
+        <div class="modal-title">
+
+            <span>ORGANISER TOOLS</span>
+
+            <h2>Create a camp</h2>
+
+            <p>
+                Create a new demo camp and generate its registration card.
+            </p>
+
+        </div>
+
+        <form id="createCampForm">
+
+            <label class="field">
+                <span>Camp name</span>
+                <input
+                    id="newCampName"
+                    type="text"
+                    placeholder="Community Blood Mobilisation Camp"
+                    required
+                >
+            </label>
+
+            <div class="two-fields">
+
+                <label class="field">
+                    <span>Location</span>
+                    <input
+                        id="newCampLocation"
+                        type="text"
+                        placeholder="Nagpur"
+                        required
+                    >
+                </label>
+
+                <label class="field">
+                    <span>Date</span>
+                    <input
+                        id="newCampDate"
+                        type="date"
+                        required
+                    >
+                </label>
+
+            </div>
+
+            <label class="field">
+                <span>Venue</span>
+                <input
+                    id="newCampVenue"
+                    type="text"
+                    placeholder="Community Hall"
+                    required
+                >
+            </label>
+
+            <div class="two-fields">
+
+                <label class="field">
+                    <span>Target donors</span>
+                    <input
+                        id="newCampTarget"
+                        type="number"
+                        min="10"
+                        value="100"
+                        required
+                    >
+                </label>
+
+                <label class="field">
+                    <span>Organisation</span>
+                    <input
+                        id="newCampOrg"
+                        type="text"
+                        placeholder="Organisation"
+                        required
+                    >
+                </label>
+
+            </div>
+
+            <button
+                class="primary-btn wide"
+                type="submit"
+            >
+                Create Camp
+                <span>→</span>
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     PROFILE MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="profileModal"
+>
+
+    <div class="modal-card glass-card">
+
+        <button
+            class="modal-close"
+            data-close="profileModal"
+        >
+            ×
+        </button>
+
+        <div class="modal-title">
+
+            <span>ACCOUNT</span>
+
+            <h2>Profile</h2>
+
+        </div>
+
+        <div class="profile-menu">
+
+            <button data-section="donor">
+                <span>♙</span>
+                My Donor Space
+            </button>
+
+            <button id="profileScanner">
+                <span>⌁</span>
+                Camp Scanner
+            </button>
+
+            <button data-section="audit">
+                <span>◇</span>
+                Audit & Security
+            </button>
+
+            <button id="logoutButton">
+                <span>↪</span>
+                Log out
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
